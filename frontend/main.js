@@ -34,16 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function postContactRequest(requestData) {
-	const response = await fetch(
-		'http://localhost:3000/api/send-contact-request',
-		{
-			headers: {
-				'content-type': 'application/json',
-			},
-			method: 'POST',
-			body: JSON.stringify(requestData),
-		}
-	);
+	const response = await fetch('/api/send-contact-request', {
+		headers: {
+			'content-type': 'application/json',
+		},
+		method: 'POST',
+		body: JSON.stringify(requestData),
+	});
 
 	const data = await response.json();
 

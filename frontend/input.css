@@ -1,0 +1,8 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+	scroll-behavior: smooth;
+	font-family: 'Montserrat', sans-serif;
+}

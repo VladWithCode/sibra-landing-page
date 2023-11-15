@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vite App</title>
+
+		<link rel="stylesheet" href="style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+			rel="stylesheet" />
+	</head>
+	<body>
+		<div class="container mx-auto" id="inicio">
+			<div
+				class="fixed top-0 h-16 w-full flex px-4 py-2 items-center z-20 bg-zinc-800 bg-opacity-20 backdrop-blur-sm text-zinc-50">
+				<div id="logo" class="">
+					<!-- <p class="font-semibold uppercase">LOGO</p> -->
+					<img
+						src="/images/logo.webp"
+						alt="Logo de SibraDgo"
+						class=""
+						width="80"
+						height="20" />
+				</div>
+			</div>
+
+			<div
+				class="relative h-160 px-6 flex flex-col text-zinc-50 justify-center">
+				<img
+					class="absolute -z-10 inset-0 h-full w-full"
+					alt="Imagen de encabezado"
+					src="/images/hero.jpeg" />
+
+				<div
+					class="absolute -z-10 inset-0 h-full w-full bg-zinc-950 bg-opacity-50 backdrop-blur-[1px]"></div>
+				<h1 class="w-[60%] text-3xl font-light mb-20">
+					Terrenos en Venta
+				</h1>
+				<a
+					href="#"
+					class="bg-green-600 py-2 px-3 rounded w-fit ml-auto mt-32 uppercase font-medium"
+					>Informate</a
+				>
+			</div>
+
+			<div
+				class="relative bg-zinc-50 py-6 px-4 text-center"
+				id="acercade">
+				<h2 class="text-xl font-medium">Lorem ipsum dolor sit.</h2>
+				<p class="pt-12">
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+					Officia aspernatur quod, dicta corrupti impedit assumenda
+					omnis iste. Ipsa quaerat eveniet vero dicta libero
+					consectetur rem distinctio accusantium, quos officiis quis?
+				</p>
+			</div>
+
+			<div class="relative px-4 py-6 bg-zinc-100" id="detalles">
+				<ul class="flex flex-col gap-6">
+					<li class="space-y-2 text-center">
+						<p class="w-12 h-12 mx-auto text-blue-800">
+							<svg class="w-full h-full fill-current">
+								<use href="/svg/buildings.svg#buildings"></use>
+							</svg>
+						</p>
+						<p class="text-zinc-800">
+							Construye un lugar para vacacionar
+						</p>
+					</li>
+					<li class="space-y-2 text-center">
+						<p class="w-12 h-12 mx-auto text-blue-800">
+							<svg class="w-full h-full fill-current">
+								<use href="/svg/diamond.svg#diamonds"></use>
+							</svg>
+						</p>
+						<p class="text-zinc-800">
+							Un area de 96m<sup>2</sup> con medidas 16m x 6m.
+						</p>
+					</li>
+				</ul>
+			</div>
+
+			<div
+				class="relative px-4 py-6 bg-green-600 text-zinc-50"
+				id="contacto">
+				<h2 class="text-xl font-medium text-center">Contactanos</h2>
+				<div class="py-2"></div>
+				<p class="text-sm font-semibold text-center">
+					Te conectaremos con uno de nuestros asesores para que
+					recibas atención personalizada
+				</p>
+
+				<div class="py-2"></div>
+				<form id="contact-form" class="p-2 rounded space-y-3">
+					<div class="flex flex-col gap-1 px-2">
+						<label for="name" class="text-sm font-medium"
+							>Nombre</label
+						>
+						<input
+							type="text"
+							name="name"
+							id="name"
+							class="bg-transparent border-b-2 border-zinc-200 p-2 focus:outline-none focus:bg-zinc-50 focus:rounded focus:text-zinc-950 transition placeholder:text-green-300"
+							placeholder="Juan Perez" />
+					</div>
+
+					<div class="flex flex-col gap-1 px-2">
+						<label for="phone" class="text-sm font-medium"
+							>Teléfono</label
+						>
+						<input
+							type="tel"
+							name="phone"
+							id="phone"
+							class="bg-transparent border-b-2 border-zinc-200 p-2 focus:outline-none focus:bg-zinc-50 focus:rounded focus:text-zinc-950 transition placeholder:text-green-300"
+							placeholder="618 111 22 33" />
+					</div>
+
+					<div class="flex flex-col gap-1 px-2">
+						<label for="message" class="text-sm font-medium"
+							>Mensaje (opcional)</label
+						>
+						<textarea
+							name="message"
+							id="message"
+							class="bg-transparent border-b-2 border-zinc-200 p-2 focus:outline-none focus:bg-zinc-50 focus:rounded focus:text-zinc-950 transition resize-y"
+							rows="2"></textarea>
+					</div>
+
+					<div class="p-1"></div>
+
+					<button
+						type="submit"
+						class="w-full bg-blue-800 text-zinc-50 py-2 rounded uppercase active:scale-95 transition">
+						Enviar
+					</button>
+				</form>
+			</div>
+
+			<div class="relative max-w-full overflow-hidden space-y-3 pt-6">
+				<h2 class="text-xl font-medium text-center">Localizanos</h2>
+				<p class="text-sm font-semibold text-center px-4">
+					Los terrenos se encuentran en
+					<i>^ubicacion de los terrenos^.</i>
+					Puedes agendar una cita con uno de nuestros asesores para
+					que te acompañen y te muestren el lugar
+				</p>
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58229.908322904885!2d-104.67272130095024!3d24.19384339759657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869a354e5d18784d%3A0x288fbb0c35d42c49!2sPresa%20Pe%C3%B1a%20Del%20%C3%81guila!5e0!3m2!1ses-419!2smx!4v1700070417557!5m2!1ses-419!2smx"
+					width="400"
+					height="300"
+					style="border: 0"
+					allowfullscreen=""
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+
+			<footer class="bg-blue-800 py-6 px-6">
+				<div class="relative max-w-full">
+					<img
+						src="/images/logo.webp"
+						alt="Logo de SibraDgo"
+						class="mx-auto"
+						width="120"
+						height="60" />
+				</div>
+				<div class="py-4">
+					<h3 class="text-lg text-zinc-50">Navegación</h3>
+					<div class="py-1"></div>
+					<ul class="flex flex-col gap-1">
+						<li
+							class="w-fit text-base text-blue-200 border-b-2 border-current pb-0.5">
+							<a href="#inicio">Inicio</a>
+						</li>
+						<li
+							class="w-fit text-base text-blue-200 border-b-2 border-current pb-0.5">
+							<a href="#acercade">Acerca de Nosotros</a>
+						</li>
+						<li
+							class="w-fit text-base text-blue-200 border-b-2 border-current pb-0.5">
+							<a href="#contacto">Contactanos</a>
+						</li>
+						<li
+							class="w-fit text-base text-blue-200 border-b-2 border-current pb-0.5">
+							<a href="#equipo">Nuestro Equipo</a>
+						</li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+
+		<script type="module" src="main.js"></script>
+	</body>
+</html>

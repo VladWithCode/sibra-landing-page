@@ -1,5 +1,8 @@
 // import './style.css';
 document.addEventListener('DOMContentLoaded', () => {
+	// Navbar
+	const navbar = document.querySelector('#main-navbar');
+
 	// Contact Form
 	const contactForm = document.querySelector('#contact-form');
 

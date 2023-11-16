@@ -5,7 +5,7 @@ import { HttpException, HttpStatus } from '@nestjs/common';
 const corsWhitelist = [
   'http://localhost:3030',
   'http://192.168.1.2:3000',
-  'http://terrenos.sibradgo.com.mx',
+  'https://terrenos.sibradgo.com.mx',
 ];
 
 async function bootstrap() {

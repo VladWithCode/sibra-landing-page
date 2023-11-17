@@ -1,7 +1,28 @@
 // import './style.css';
+
 document.addEventListener('DOMContentLoaded', () => {
 	// Navbar
 	const navbar = document.querySelector('#main-navbar');
+	const navbarToggler = document.querySelector('#main-navbar-toggler');
+
+	navbarToggler.addEventListener('click', () => {
+		navbar.classList.toggle('visible');
+	});
+
+	// Detail List
+	const detailList = document.querySelector('#detail-list');
+	const observer = new IntersectionObserver(
+		([entry]) => {
+			if (entry.isIntersecting) {
+				detailList
+					.querySelectorAll('li')
+					.forEach(child => child.classList.add('slideInUp'));
+			}
+		},
+		{ threshold: 0.25 }
+	);
+
+	observer.observe(detailList);
 
 	// Contact Form
 	const contactForm = document.querySelector('#contact-form');

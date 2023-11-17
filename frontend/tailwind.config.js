@@ -8,6 +8,9 @@ export default {
 				120: '30rem',
 				160: '40rem',
 			},
+			screens: {
+				xs: '480px',
+			},
 		},
 	},
 	plugins: [],

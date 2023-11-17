@@ -14,21 +14,28 @@
 			rel="stylesheet" />
 	</head>
 	<body>
-		<div class="w-full max-w-7xl mx-auto relative" id="inicio">
+		<div
+			class="w-full max-w-7xl mx-auto relative shadow shadow-zinc-300"
+			id="inicio">
 			<header
-				class="fixed top-0 left-0 h-16 w-full flex px-4 py-2 items-center z-20 bg-zinc-800 bg-opacity-20 backdrop-blur-sm text-zinc-50 border-b-2 border-zinc-800 border-opacity-20">
-				<div id="logo" class="flex">
+				class="fixed top-0 left-0 h-16 w-full flex px-4 py-2 items-center z-20 bg-zinc-800 bg-opacity-30 backdrop-blur-sm text-zinc-50 border-b-2 border-zinc-800 border-opacity-20 lg:bg-opacity-40 lg:h-20">
+				<div id="logo" class="flex animate animate-slow fadeIn">
 					<img
 						src="/images/logo.webp"
 						alt="Logo"
-						class=""
-						width="40"
-						height="40" />
-					<span class="font-light text-sm my-auto px-2">LOGO</span>
+						class="h-10 w-10 lg:h-12 lg:w-12"
+						width="160"
+						height="160" />
+					<span
+						class="font-light text-sm my-auto pl-2 lg:text-base lg:font-medium lg:pl-4"
+						>LOGO</span
+					>
 				</div>
 
 				<!-- Toggler -->
-				<button class="m-auto mr-0 space-y-1" id="main-navbar-toggler">
+				<button
+					class="m-auto mr-0 space-y-1 animate fadeSlideInRight"
+					id="main-navbar-toggler">
 					<p class="ml-auto h-0.5 w-6 bg-zinc-200"></p>
 					<p class="ml-auto h-0.5 w-6 bg-zinc-200"></p>
 					<p class="ml-auto h-0.5 w-4 bg-zinc-200"></p>
@@ -37,7 +44,7 @@
 			<!-- Navbar -->
 			<nav
 				id="main-navbar"
-				class="fixed right-0 top-16 h-0 w-full bg-zinc-800 bg-opacity-20 backdrop-blur-md text-zinc-50 z-20 overflow-hidden">
+				class="fixed right-0 top-16 h-0 w-full bg-zinc-800 bg-opacity-30 backdrop-blur-md text-zinc-50 z-20 overflow-hidden lg:top-20 transition-[height] duration-300">
 				<ul
 					class="flex flex-col gap-4 p-2 h-full justify-center items-center text-xl">
 					<li class="w-fit border-b-2 border-current uppercase">
@@ -55,10 +62,11 @@
 				</ul>
 			</nav>
 
-			<div class="relative h-160 px-6 text-zinc-50 justify-center">
+			<div
+				class="relative h-[80vh] text-zinc-50 justify-center overflow-hidden">
 				<img
 					src="/images/hero_1400.webp"
-					class="absolute z-0 inset-0 h-full w-auto mx-auto object-cover object-center md:w-full md:h-auto md:object-[0_-200px] xl:object-[0_-580px] 2xl:object-[0_-620px]"
+					class="absolute z-0 inset-0 h-full w-auto mx-auto object-cover object-center xs:w-full xs:h-auto xl:object-[0_-580px] 2xl:object-[0_-620px]"
 					alt="Imagen de ubicacion de los terrenos"
 					srcset="
 						/images/hero_1400.webp 1400w,
@@ -67,17 +75,21 @@
 					"
 					sizes="(max-width: 400px) 400px,(max-width: 800px) 720px, 1400px" />
 				<div
-					class="absolute z-0 inset-0 h-full w-full bg-zinc-950 bg-opacity-50 backdrop-blur-[1px]"></div>
+					class="absolute z-0 inset-0 h-full w-full bg-zinc-950 bg-opacity-60 backdrop-blur-[1px]"></div>
 
 				<div
-					class="relative h-full grid grid-cols-2 grid-rows-2 mx-auto w-4/5 z-10">
+					class="relative h-full grid grid-cols-3 grid-rows-3 mx-auto z-10 px-6 md:px-16">
 					<h1
-						class="text-3xl font-light mb-20 self-end col-span-2 md:col-span-1">
-						Terrenos en Venta
+						class="text-3xl font-light mt-auto col-start-1 col-span-3 md:col-span-2 animate animate-slow fadeSlideInLeft">
+						Terrenos en Peña del Aguila
 					</h1>
+					<p
+						class="col-start-1 col-span-2 row-start-2 py-6 animate animate-slow animate-delay-0.5 fadeSlideInLeft md:col-span-1">
+						La mejor inversion para tu dinero
+					</p>
 					<a
 						href="#"
-						class="row-start-2 col-start-2 bg-amber-500 py-2 px-3 rounded w-fit m-auto mr-0 mt-32 uppercase font-medium"
+						class="col-span-2 row-start-3 col-start-2 justify-self-end bg-amber-500 py-2 px-3 rounded w-fit h-fit uppercase font-medium animate animate-slow fadeSlideInRight"
 						>Informate</a
 					>
 				</div>
@@ -97,8 +109,11 @@
 			</div>
 
 			<div class="relative px-4 py-8 bg-zinc-100 md:py-12" id="detalles">
-				<ul class="flex flex-col gap-8 md:flex-row">
-					<li class="space-y-2 text-center md:w-1/3">
+				<ul
+					class="flex flex-col gap-8 md:flex-row detail-list"
+					id="detail-list">
+					<li
+						class="space-y-2 text-center md:w-1/3 opacity-0 animate-slow animate">
 						<p class="w-12 h-12 mx-auto text-stone-700">
 							<svg class="w-full h-full fill-current">
 								<use href="/svg/buildings.svg#buildings"></use>
@@ -106,7 +121,8 @@
 						</p>
 						<p class="">Construye un lugar para vacacionar</p>
 					</li>
-					<li class="space-y-2 text-center md:w-1/3">
+					<li
+						class="space-y-2 text-center md:w-1/3 opacity-0 animate-slow animate">
 						<p class="w-12 h-12 mx-auto text-stone-700">
 							<svg class="w-full h-full fill-current">
 								<use href="/svg/diamond.svg#diamonds"></use>
@@ -116,7 +132,8 @@
 							Un area de 96m<sup>2</sup> con medidas 16m x 6m.
 						</p>
 					</li>
-					<li class="space-y-2 text-center md:w-1/3">
+					<li
+						class="space-y-2 text-center md:w-1/3 opacity-0 animate-slow animate">
 						<p class="w-12 h-12 mx-auto text-stone-700">
 							<svg class="w-full h-full fill-current">
 								<use href="/svg/diamond.svg#diamonds"></use>
@@ -179,7 +196,7 @@
 
 						<button
 							type="submit"
-							class="w-full bg-blue-800 text-zinc-50 py-2 rounded uppercase active:scale-95 transition">
+							class="w-full bg-stone-700 text-zinc-50 py-2 rounded uppercase active:scale-95 transition">
 							Enviar
 						</button>
 					</form>
@@ -231,7 +248,7 @@
 			</div>
 
 			<div
-				class="relative max-w-full overflow-hidden space-y-3 pt-6 z-10 text-stone-700">
+				class="relative max-w-full overflow-hidden space-y-3 py-6 z-10 text-stone-700">
 				<h2 class="text-xl font-medium text-center">Localizanos</h2>
 				<p
 					class="text-sm font-semibold text-center px-4 max-w-prose mx-auto">
@@ -252,9 +269,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="py-2"></div>
-		<footer class="bg-blue-800 p-6 w-full">
-			<div class="relative max-w-full">
+		<footer
+			class="relative bg-stone-800 p-6 w-full xl:grid xl:grid-cols-4 xl:grid-rows-2 z-10">
+			<div class="relative max-w-full xl:self-center">
 				<img
 					src="/images/logo.webp"
 					alt="Logo de SibraDgo"
@@ -267,22 +284,47 @@
 				<div class="py-1"></div>
 				<ul class="flex flex-col gap-1">
 					<li
-						class="w-fit text-base text-blue-200 border-b-2 border-current pb-0.5">
+						class="w-fit text-base text-stone-200 border-b-2 border-current pb-0.5">
 						<a href="#inicio">Inicio</a>
 					</li>
 					<li
-						class="w-fit text-base text-blue-200 border-b-2 border-current pb-0.5">
+						class="w-fit text-base text-stone-200 border-b-2 border-current pb-0.5">
 						<a href="#acercade">Acerca de Nosotros</a>
 					</li>
 					<li
-						class="w-fit text-base text-blue-200 border-b-2 border-current pb-0.5">
+						class="w-fit text-base text-stone-200 border-b-2 border-current pb-0.5">
 						<a href="#contacto">Contactanos</a>
 					</li>
 					<li
-						class="w-fit text-base text-blue-200 border-b-2 border-current pb-0.5">
+						class="w-fit text-base text-stone-200 border-b-2 border-current pb-0.5">
 						<a href="#equipo">Nuestro Equipo</a>
 					</li>
 				</ul>
+			</div>
+			<div class="col-start-4 py-4">
+				<h3 class="text-lg text-zinc-50">Comunicate</h3>
+				<div class="py-1"></div>
+				<ul class="flex flex-col gap-1">
+					<li
+						class="w-fit text-base text-stone-200 border-current pb-0.5">
+						<span class="font-light">Al numero telefonico:</span>
+						<span class="font-semibold">618-111-22-33</span>
+					</li>
+					<li
+						class="w-fit text-base text-stone-200 border-current pb-0.5">
+						<span class="font-light">En el facebook:</span>
+						<a
+							href="https://facebook.com/sibramx"
+							class="font-semibold"
+							target="_blank"
+							>Sibra</a
+						>
+					</li>
+				</ul>
+			</div>
+			<div
+				class="xl:col-span-full xl:row-start-2 self-end justify-self-center text-stone-700">
+				Copyright &copy; 2023 GG Marketing.
 			</div>
 		</footer>
 		<script type="module" src="main.js"></script>

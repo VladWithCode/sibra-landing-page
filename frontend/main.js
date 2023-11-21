@@ -1,4 +1,9 @@
 // import './style.css';
+<<<<<<< Updated upstream
+=======
+import './src/plan.js';
+
+>>>>>>> Stashed changes
 document.addEventListener('DOMContentLoaded', () => {
 	// Contact Form
 	const contactForm = document.querySelector('#contact-form');

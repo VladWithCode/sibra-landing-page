@@ -1,0 +1,11 @@
+Model Information:
+* title:	Medieval Stone Church with Stone Wall
+* source:	https://sketchfab.com/3d-models/medieval-stone-church-with-stone-wall-4c80fab37ce845078a44226a9568a320
+* author:	Sereib (https://sketchfab.com/Sereib)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Medieval Stone Church with Stone Wall" (https://sketchfab.com/3d-models/medieval-stone-church-with-stone-wall-4c80fab37ce845078a44226a9568a320) by Sereib (https://sketchfab.com/Sereib) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="/images/logo.webp" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Terrenos Peña del Aguila</title>
 
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="/style.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -66,7 +66,7 @@
 				class="relative h-[80vh] text-zinc-50 justify-center overflow-hidden">
 				<img
 					src="/images/hero_1400.webp"
-					class="absolute z-0 inset-0 h-full w-auto mx-auto object-cover object-center xs:w-full xs:h-auto xl:object-[0_-580px] 2xl:object-[0_-620px]"
+					class="absolute z-0 inset-0 h-full w-auto mx-auto object-cover object-center xs:w-full xs:h-auto xl:object-[0_-500px] 2xl:object-[0_-620px]"
 					alt="Imagen de ubicacion de los terrenos"
 					srcset="
 						/images/hero_1400.webp 1400w,
@@ -257,15 +257,40 @@
 					Puedes agendar una cita con uno de nuestros asesores para
 					que te acompañen y te muestren el lugar
 				</p>
-				<div class="mx-auto w-fit">
-					<iframe
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58229.908322904885!2d-104.67272130095024!3d24.19384339759657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869a354e5d18784d%3A0x288fbb0c35d42c49!2sPresa%20Pe%C3%B1a%20Del%20%C3%81guila!5e0!3m2!1ses-419!2smx!4v1700070417557!5m2!1ses-419!2smx"
-						width="400"
-						height="300"
-						style="border: 0"
-						allowfullscreen=""
-						loading="lazy"
-						referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<div class="py-10"></div>
+				<div class="relative max-w-full bg-white">
+					<div
+						class="relative grid grid-cols-1 grid-rows-[auto_1fr] border-4 border-white justify-self-center">
+						<div
+							class="absolute left-0 -top-10 flex gap-0 px-4 z-10">
+							<button
+								class="rounded-t px-4 py-2 bg-white shadow-sm shadow-zinc-300 font-medium"
+								data-locate-selector="maps">
+								Maps
+							</button>
+							<button
+								class="rounded-t px-4 py-2"
+								data-locate-selector="render">
+								Plano
+							</button>
+						</div>
+						<iframe
+							class="relative row-start-2 col-start-1 max-w-full z-20"
+							data-locate-display="maps"
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58229.908322904885!2d-104.67272130095024!3d24.19384339759657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869a354e5d18784d%3A0x288fbb0c35d42c49!2sPresa%20Pe%C3%B1a%20Del%20%C3%81guila!5e0!3m2!1ses-419!2smx!4v1700070417557!5m2!1ses-419!2smx"
+							width="400"
+							height="600"
+							style="border: 0"
+							allowfullscreen=""
+							loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"></iframe>
+						<div
+							class="relative row-start-2 col-start-1 max-w-full max-h-full invisible z-20 bg-white"
+							data-locate-display="render"
+							id="plan-render-container">
+							<!-- <canvas class="w-full" id="plan-render"></canvas> -->
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

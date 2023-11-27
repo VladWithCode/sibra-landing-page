@@ -1,5 +1,7 @@
 // import './style.css';
 
+import loadPlan from './src/plan';
+
 document.addEventListener('DOMContentLoaded', () => {
 	// Navbar
 	const navbar = document.querySelector('#main-navbar');
@@ -55,6 +57,50 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (input.tagName === 'TEXTAREA') input.innerHTML = '';
 		}
 	});
+
+	// Render / Maps
+	const locateSelectorBtns = document.querySelectorAll(
+		'[data-locate-selector]'
+	);
+	const locateDisplayElements = document.querySelectorAll(
+		'[data-locate-display]'
+	);
+	const activeBtnClasslist = [
+		'bg-white',
+		'shadow-sm',
+		'shadow-zinc-300',
+		'font-medium',
+	];
+
+	for (const btn of locateSelectorBtns) {
+		btn.addEventListener('click', () => {
+			const displayId = btn.dataset.locateSelector;
+			let displayElement;
+			btn.classList.add(...activeBtnClasslist);
+
+			for (const btn of locateSelectorBtns) {
+				const id = btn.dataset.locateSelector;
+
+				if (id !== displayId)
+					btn.classList.remove(...activeBtnClasslist);
+			}
+
+			for (const element of locateDisplayElements) {
+				const id = element.dataset.locateDisplay;
+
+				if (id === displayId) {
+					element.classList.remove('invisible');
+					displayElement = element;
+				} else {
+					element.classList.add('invisible');
+				}
+			}
+
+			if (displayId === 'render') {
+				loadPlan();
+			}
+		});
+	}
 });
 
 async function postContactRequest(requestData) {

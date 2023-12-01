@@ -217,7 +217,9 @@
 						</button>
 					</form>
 				</div>
-				<div class="px-4 py-6 bg-amber-100 md:w-1/2 text-stone-700">
+				<div class="relative px-4 py-6 md:w-1/2 text-amber-50">
+					<div
+						class="absolute inset-0 bg-stone-950 bg-opacity-30 -z-10"></div>
 					<h2 class="text-xl font-medium text-center">Comunicate</h2>
 					<div class="py-2"></div>
 					<p
@@ -226,16 +228,16 @@
 						brindaremos la información que necesites
 					</p>
 					<div class="py-2"></div>
-					<ul class="space-y-4 text-center">
-						<li class="text-lg">
+					<ul class="space-y-4 text-center" id="contact-list">
+						<li class="text-lg animate opacity-0">
 							<p class="font-semibold">Nombre</p>
 							<p class="">618-111-22-33</p>
 						</li>
-						<li class="text-lg">
+						<li class="text-lg animate animate-delay-1 opacity-0">
 							<p class="font-semibold">Nombre</p>
 							<p class="">618-111-22-33</p>
 						</li>
-						<li class="text-lg">
+						<li class="text-lg animate animate-delay-2 opacity-0">
 							<p class="font-semibold">Nombre</p>
 							<p class="">618-111-22-33</p>
 						</li>
@@ -280,13 +282,18 @@
 						class="relative grid grid-cols-1 grid-rows-[auto_1fr] border-4 border-white justify-self-center">
 						<div
 							class="absolute left-0 -top-10 flex gap-0 px-4 z-10">
+							<div
+								class="absolute rounded-t px-4 py-2 h-full text-transparent font-medium bg-white shadow shadow-zinc-300 z-0"
+								data-locate-bg>
+								Maps
+							</div>
 							<button
-								class="rounded-t px-4 py-2 bg-white shadow-sm shadow-zinc-300 font-medium"
+								class="relative px-4 py-2 font-medium z-10 basis-1/2"
 								data-locate-selector="maps">
 								Maps
 							</button>
 							<button
-								class="rounded-t px-4 py-2"
+								class="relative px-4 py-2 z-10 basis-1/2"
 								data-locate-selector="render">
 								Plano
 							</button>
@@ -305,7 +312,20 @@
 							class="relative row-start-2 col-start-1 max-w-full max-h-full invisible z-20 bg-white"
 							data-locate-display="render"
 							id="plan-render-container">
-							<!-- <canvas class="w-full" id="plan-render"></canvas> -->
+							<div
+								class="absolute inset-0 w-full h-full bg-stone-50 gap-4 flex flex-col items-center justify-center pointer-events-none animate"
+								data-render-loading-screen>
+								<p
+									class="relative text-xl font-medium uppercase">
+									cargando
+								</p>
+								<div
+									class="relative w-4/5 h-4 rounded bg-stone-300 overflow-hidden">
+									<div
+										class="absolute h-full inset-0 w-0 bg-blue-400"
+										data-render-loading-bar></div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

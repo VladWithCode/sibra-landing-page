@@ -33,6 +33,9 @@ export default function loadPlan() {
 	renderer.setPixelRatio(window.devicePixelRatio);
 	renderer.setSize(vpWidth, vpHeight);
 	renderer.outputColorSpace = Three.SRGBColorSpace;
+
+	// Add data attr to dispose of element later
+	renderer.domElement.id = 'render-dom-element';
 	viewPortContainer.appendChild(renderer.domElement);
 
 	const controls = new OrbitControls(camera, renderer.domElement);
@@ -43,26 +46,43 @@ export default function loadPlan() {
 	scene.add(ambientLight);
 	scene.add(hemisphericLight);
 
-	loader.load(
-		'/render/scene.gltf',
-		function (gltf) {
-			const model = gltf.scene;
-			scene.add(model);
-			model.scale.set(0.5, 0.5, 0.5);
-
-			controls.target.set(0, 0.5, 0);
-
-			renderer.render(scene, camera);
-		},
-		onRenderLoadProgress,
-		onRenderLoadError
+	const loadingScreen = document.querySelector(
+		'[data-render-loading-screen]'
 	);
-}
+	const loadingBar = document.querySelector('[data-render-loading-bar]');
+	let loadedModel;
 
-function onRenderLoadSuccess(gltf, scene, camera, renderer) {}
+	if (loadedModel) {
+		scene.add(loadedModel);
+		renderer.render(scene, camera);
+	} else {
+		loader.load(
+			'/render/scene.gltf',
+			function (gltf) {
+				const model = gltf.scene;
+				loadedModel = model;
+				scene.add(model);
+				model.scale.set(0.5, 0.5, 0.5);
 
-function onRenderLoadProgress(xhr) {}
+				controls.target.set(0, 0.5, 0);
 
-function onRenderLoadError(error) {
-	console.error(error);
+				renderer.render(scene, camera);
+				loadingScreen.classList.add('fadeOut');
+			},
+			function (xhr) {
+				const percentage = Math.round((xhr.loaded / xhr.total) * 100);
+
+				loadingBar.style = 'width: ' + percentage + '%';
+			},
+			console.error
+		);
+	}
+
+	return function dispose() {
+		if (loadedModel) scene.remove(loadedModel);
+		document.querySelector('#render-dom-element').remove();
+		loadingScreen.classList.remove('fadeOut');
+		loadingBar.style = 'width: 0%';
+		viewPortContainer.appendChild(loadingScreen);
+	};
 }

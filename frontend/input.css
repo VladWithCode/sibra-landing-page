@@ -22,6 +22,21 @@ ul.detail-list {
 		animation-delay: 0.7s;
 	}
 }
+[data-locate-bg] {
+	transition-duration: 0.3s;
+	transition-property: transform;
+
+	&.maps {
+		transform: translateX(0);
+	}
+
+	&.render {
+		transform: translateX(100%);
+	}
+}
+[data-render-loading-bar] {
+	transition: width 0.3s;
+}
 .animate {
 	animation-duration: 0.7s;
 	animation-fill-mode: both;

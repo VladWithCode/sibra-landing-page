@@ -12,16 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	// Hero
-	setInterval(animateBackgrounds(), 5000);
+	setTimeout(animateBackgrounds(), 3000);
 
 	// Detail List
 	const detailList = document.querySelector('#detail-list');
 	const observer = new IntersectionObserver(
 		([entry]) => {
 			if (entry.isIntersecting) {
-				detailList
+				entry.target
 					.querySelectorAll('li')
 					.forEach(child => child.classList.add('slideInUp'));
+
+				observer.unobserve(entry.target);
 			}
 		},
 		{ threshold: 0.25 }
@@ -61,31 +63,30 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
+	// Comunicate
+	const contactList = document.querySelector('#contact-list');
+	observer.observe(contactList);
+
 	// Render / Maps
 	const locateSelectorBtns = document.querySelectorAll(
 		'[data-locate-selector]'
 	);
+	const locateSelectorBg = document.querySelector('[data-locate-bg]');
 	const locateDisplayElements = document.querySelectorAll(
 		'[data-locate-display]'
 	);
-	const activeBtnClasslist = [
-		'bg-white',
-		'shadow-sm',
-		'shadow-zinc-300',
-		'font-medium',
-	];
+	let disposeRender;
 
 	for (const btn of locateSelectorBtns) {
 		btn.addEventListener('click', () => {
 			const displayId = btn.dataset.locateSelector;
-			let displayElement;
-			btn.classList.add(...activeBtnClasslist);
 
-			for (const btn of locateSelectorBtns) {
-				const id = btn.dataset.locateSelector;
-
-				if (id !== displayId)
-					btn.classList.remove(...activeBtnClasslist);
+			if (displayId === 'maps') {
+				locateSelectorBg.classList.add('maps');
+				locateSelectorBg.classList.remove('render');
+			} else {
+				locateSelectorBg.classList.remove('maps');
+				locateSelectorBg.classList.add('render');
 			}
 
 			for (const element of locateDisplayElements) {
@@ -93,14 +94,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 				if (id === displayId) {
 					element.classList.remove('invisible');
-					displayElement = element;
 				} else {
 					element.classList.add('invisible');
 				}
 			}
 
-			if (displayId === 'render') {
-				loadPlan();
+			if (displayId === 'render' && typeof disposeRender !== 'function') {
+				disposeRender = loadPlan();
+			} else if (displayId !== 'render') {
+				disposeRender();
+				disposeRender = null;
 			}
 		});
 	}
@@ -134,11 +137,10 @@ async function asyncHandler(p) {
 function animateBackgrounds() {
 	let activeElement = '[data-hero-image]';
 
-	return function toggle() {
-		// Hero
-		const heroVideo = document.querySelector('[data-hero-video]');
-		const heroImage = document.querySelector('[data-hero-image]');
+	const heroVideo = document.querySelector('[data-hero-video]');
+	const heroImage = document.querySelector('[data-hero-image]');
 
+	return function toggle() {
 		if (activeElement === '[data-hero-video]') {
 			heroVideo.classList.remove('fadeIn');
 			heroImage.classList.remove('fadeOut');
@@ -148,6 +150,8 @@ function animateBackgrounds() {
 
 			activeElement = '[data-hero-image]';
 			heroVideo.currentTime = 0;
+
+			setTimeout(toggle, 3 * 1000);
 		} else {
 			heroVideo.classList.remove('fadeOut');
 			heroImage.classList.remove('fadeIn');
@@ -157,6 +161,8 @@ function animateBackgrounds() {
 
 			activeElement = '[data-hero-video]';
 			heroVideo.play();
+
+			setTimeout(toggle, 10 * 1000);
 		}
 	};
 }

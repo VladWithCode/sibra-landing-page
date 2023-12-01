@@ -6,7 +6,7 @@ body {
 	scroll-behavior: smooth;
 	font-family: Montserrat, sans-serif;
 	--tw-bg-opacity: 1;
-	background-color: rgb(250 250 250 / var(--tw-bg-opacity));
+	@apply bg-amber-50;
 }
 nav.visible {
 	height: 100vh;
@@ -56,6 +56,17 @@ ul.detail-list {
 	}
 	to {
 		opacity: 1;
+	}
+}
+.fadeOut {
+	animation-name: fadeOut;
+}
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
 	}
 }
 .fadeSlideInLeft {

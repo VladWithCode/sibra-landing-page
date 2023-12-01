@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		navbar.classList.toggle('visible');
 	});
 
+	// Hero
+	setInterval(animateBackgrounds(), 5000);
+
 	// Detail List
 	const detailList = document.querySelector('#detail-list');
 	const observer = new IntersectionObserver(
@@ -126,4 +129,34 @@ async function asyncHandler(p) {
 	} catch (e) {
 		return [undefined, e];
 	}
+}
+
+function animateBackgrounds() {
+	let activeElement = '[data-hero-image]';
+
+	return function toggle() {
+		// Hero
+		const heroVideo = document.querySelector('[data-hero-video]');
+		const heroImage = document.querySelector('[data-hero-image]');
+
+		if (activeElement === '[data-hero-video]') {
+			heroVideo.classList.remove('fadeIn');
+			heroImage.classList.remove('fadeOut');
+
+			heroVideo.classList.add('fadeOut');
+			heroImage.classList.add('fadeIn');
+
+			activeElement = '[data-hero-image]';
+			heroVideo.currentTime = 0;
+		} else {
+			heroVideo.classList.remove('fadeOut');
+			heroImage.classList.remove('fadeIn');
+
+			heroVideo.classList.add('fadeIn');
+			heroImage.classList.add('fadeOut');
+
+			activeElement = '[data-hero-video]';
+			heroVideo.play();
+		}
+	};
 }

@@ -11,6 +11,9 @@ export default {
 			screens: {
 				xs: '480px',
 			},
+			fontFamily: {
+				serif: "'Merriweather', serif",
+			},
 		},
 	},
 	plugins: [],

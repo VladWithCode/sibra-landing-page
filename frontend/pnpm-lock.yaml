@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  include-media:
+    specifier: ^2.0.0
+    version: 2.0.0
   three:
     specifier: ^0.158.0
     version: 0.158.0
@@ -602,6 +605,10 @@ packages:
     dependencies:
       function-bind: 1.1.2
     dev: true
+
+  /include-media@2.0.0:
+    resolution: {integrity: sha512-LSJcffPYIZ/Kln0rIi5UhqQbZxElDCMYA4dPC5MI1rkwwjptgEiOicHnzB0MMhMNJver0+4zULb4MKlgDyapZg==}
+    dev: false
 
   /inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}

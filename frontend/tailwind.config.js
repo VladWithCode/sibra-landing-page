@@ -10,6 +10,7 @@ export default {
 			},
 			screens: {
 				xs: '480px',
+				desktop: '1920px',
 			},
 			fontFamily: {
 				serif: "'Merriweather', serif",

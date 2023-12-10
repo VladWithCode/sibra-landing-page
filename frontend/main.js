@@ -1,6 +1,6 @@
-// import './style.css';
-
+import { Gallery } from './src/gallery';
 import loadPlan from './src/plan';
+import { InfiniteSlider } from './src/slider';
 
 document.addEventListener('DOMContentLoaded', () => {
 	// Navbar
@@ -107,6 +107,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	}
+
+	// Amenity Slider
+	const slider = new InfiniteSlider();
+	slider.animate.bind(slider, 0);
+	slider.play();
+
+	// Gallery
+	const gallery = new Gallery();
+	gallery.play();
 });
 
 async function postContactRequest(requestData) {

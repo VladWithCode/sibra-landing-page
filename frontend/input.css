@@ -11,17 +11,234 @@ body {
 nav.visible {
 	height: 100vh;
 }
-ul.detail-list {
-	& > li.animate:first-child {
-		animation-delay: 0s;
-	}
-	& > li.animate:nth-child(2) {
-		animation-delay: 0.3s;
-	}
-	& > li.animate:nth-child(3) {
-		animation-delay: 0.7s;
+
+.slider-container {
+	position: relative;
+	overflow: hidden;
+	font-size: 2.5vmin;
+
+	@media (width >= 1440px) {
+		width: 60svw;
+		margin: 0 auto;
 	}
 }
+
+.slider {
+	display: flex;
+	transition: 0.3s;
+	transform: translateX(-100%);
+
+	.slide {
+		flex: 1 0 100%;
+		width: 100%;
+		padding: 0 2em;
+
+		@screen sm {
+			flex-basis: 33.33333%;
+			width: 33.33333%;
+
+			p {
+				font-size: 1rem;
+			}
+
+			div {
+				gap: 0rem;
+			}
+
+			svg {
+				width: 2em;
+				height: 2em;
+			}
+		}
+	}
+
+	/* 	.slide.is-active {
+		opacity: 1;
+	} */
+
+	.slider-arrow {
+		position: absolute;
+		border: none;
+		cursor: pointer;
+
+		&.slider-prev {
+			rotate: 90deg;
+		}
+	}
+
+	&-navigation {
+		display: flex;
+		gap: 0.5rem;
+		position: absolute;
+		bottom: 1.1em;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 20;
+		align-items: center;
+		height: 1.1em;
+
+		@media (width >= 1024px) {
+			height: 0.9em;
+			bottom: 0.9em;
+		}
+	}
+
+	&-bullet {
+		width: 1em;
+		height: 1em;
+		border: none;
+		cursor: pointer;
+		border-radius: 999px;
+		transition: 0.3s;
+		@apply bg-stone-700;
+
+		@media (width >= 1024px) {
+			width: 0.7em;
+			height: 0.7em;
+		}
+	}
+	&-bullet.is-active {
+		width: 1.1em;
+		height: 1.1em;
+		@apply bg-amber-300;
+
+		@media (width >= 1024px) {
+			width: 0.9em;
+			height: 0.9em;
+		}
+	}
+}
+
+/* Animated Gallery */
+.gallery {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
+	overflow: hidden;
+
+	@media screen and (width >= 1440px) {
+		max-width: 60%;
+		margin: 0 auto;
+	}
+
+	&-display {
+		min-height: calc(100vw * 9 / 16);
+
+		@media (width >= 1440px) {
+			min-height: calc(60vw * 9 / 16);
+		}
+	}
+
+	&-thumbs {
+		display: grid;
+		min-width: 100%;
+		padding: 0.5rem 0rem;
+		border-width: 0rem 0.5rem;
+		overflow: auto hidden;
+		cursor: pointer;
+
+		grid-auto-columns: 120px;
+		grid-template-rows: 1;
+		gap: 0.5rem;
+		scroll-behavior: smooth;
+
+		@screen xl {
+			grid-auto-columns: 12rem;
+		}
+
+		@screen desktop {
+			grid-auto-columns: 16rem;
+		}
+
+		@apply border-stone-50;
+	}
+
+	&-thumb {
+		grid-row: 1;
+		width: 100%;
+		filter: brightness(0.5);
+		transition: filter 0.4s;
+	}
+
+	&-thumb.active {
+		filter: brightness(1);
+	}
+
+	&-image {
+		position: absolute;
+		inset: 0;
+		padding: 0.5rem;
+		width: 100%;
+		height: auto;
+		transition: all;
+		transform: translateY(100%);
+		opacity: 0;
+		border-radius: 0.8rem;
+	}
+}
+
+#acercade {
+	@media (width >= 1440px) {
+		& > * {
+			width: 60svw;
+			margin: 0 auto;
+		}
+
+		h2 {
+			width: 30ch;
+		}
+	}
+}
+
+#localiza {
+	@media (width >= 1440px) {
+		& > * {
+			width: 60svw;
+			margin: 0 auto;
+		}
+	}
+}
+
+#contacto {
+	@media (width >= 1440px) {
+		& > .relative {
+			width: 30svw;
+			@apply text-stone-50;
+
+			&:last-child {
+				margin-right: auto;
+			}
+		}
+		#contact-form {
+			margin-left: auto;
+		}
+	}
+}
+
+@keyframes galleryImageIn {
+	0% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+}
+
+@keyframes galleryImageOut {
+	0% {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+}
+
+/* Locate selector */
 [data-locate-bg] {
 	transition-duration: 0.3s;
 	transition-property: transform;
@@ -40,6 +257,7 @@ ul.detail-list {
 .animate {
 	animation-duration: 0.7s;
 	animation-fill-mode: both;
+
 	&.animate-infinite {
 		animation-iteration-count: infinite;
 	}
@@ -62,6 +280,20 @@ ul.detail-list {
 		animation-delay: 1.5s;
 	}
 }
+.pulse {
+	animation-name: pulse;
+}
+@keyframes pulse {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(1.3);
+	}
+}
 .fadeIn {
 	animation-name: fadeIn;
 }
@@ -69,7 +301,7 @@ ul.detail-list {
 	0% {
 		opacity: 0;
 	}
-	to {
+	100% {
 		opacity: 1;
 	}
 }

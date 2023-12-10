@@ -5,23 +5,27 @@
 		<link rel="icon" type="image/svg+xml" href="/images/logo.webp" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Terrenos Peña del Aguila</title>
-
 		<link rel="stylesheet" href="/style.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap"
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin="" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap"
 			rel="stylesheet" />
 	</head>
 	<body>
 		<div class="w-full mx-auto relative shadow shadow-zinc-300" id="inicio">
 			<header
-				class="fixed top-0 left-0 h-16 w-full flex px-4 py-2 items-center z-40 bg-amber-950 bg-opacity-30 backdrop-blur text-zinc-50 border-b-2 border-zinc-800 border-opacity-20 lg:bg-opacity-40 lg:h-20">
-				<div id="logo" class="flex animate fadeSlideInLeft">
+				class="fixed top-0 left-0 h-14 w-full flex px-4 py-2 items-center z-50 bg-amber-950 bg-opacity-30 backdrop-blur text-zinc-50 border-b-2 border-zinc-800 border-opacity-20 lg:bg-opacity-40 xl:h-16">
+				<div
+					id="logo"
+					class="flex animate animate-slow fadeSlideInLeft">
 					<img
 						src="/images/logo.webp"
 						alt="Logo"
-						class="h-10 w-10 lg:h-12 lg:w-12"
+						class="h-10 w-10"
 						width="160"
 						height="160" />
 					<span
@@ -29,24 +33,46 @@
 						>Campiña</span
 					>
 				</div>
-
 				<!-- Toggler -->
 				<button
-					class="m-auto mr-0 space-y-1 animate fadeSlideInRight"
+					class="m-auto mr-0 space-y-1 animate fadeSlideInRight xl:hidden"
 					id="main-navbar-toggler">
-					<p class="ml-auto h-0.5 w-6 bg-zinc-200"></p>
-					<p class="ml-auto h-0.5 w-6 bg-zinc-200"></p>
-					<p class="ml-auto h-0.5 w-4 bg-zinc-200"></p>
+					<span class="block ml-auto h-0.5 w-6 bg-zinc-200"></span>
+					<span class="block ml-auto h-0.5 w-6 bg-zinc-200"></span>
+					<span class="block ml-auto h-0.5 w-4 bg-zinc-200"></span>
 				</button>
+				<!-- Navbar -->
+				<nav
+					class="hidden text-zinc-50 ml-auto xl:block animate fadeSlideInRight animate-slow">
+					<ul
+						class="flex gap-4 p-2 h-full justify-center items-center font-light">
+						<li
+							class="w-fit uppercase border-b-2 border-transparent hover:font-normal hover:border-zinc-50 transition">
+							<a href="#inicio">Inicio</a>
+						</li>
+						<li
+							class="w-fit uppercase border-b-2 border-transparent hover:font-normal hover:border-zinc-50 transition">
+							<a href="#acercade">Acerca de Nosotros</a>
+						</li>
+						<li
+							class="w-fit uppercase border-b-2 border-transparent hover:font-normal hover:border-zinc-50 transition">
+							<a href="#detalles">Detalles</a>
+						</li>
+						<li
+							class="w-fit uppercase border-b-2 border-transparent hover:font-normal hover:border-zinc-50 transition">
+							<a href="#contacto">Contacto</a>
+						</li>
+					</ul>
+				</nav>
 			</header>
 			<!-- Navbar -->
 			<nav
 				id="main-navbar"
-				class="fixed right-0 top-16 h-0 w-full bg-amber-950 bg-opacity-30 backdrop-blur text-zinc-50 z-50 overflow-hidden lg:top-20 transition-[height] duration-300">
+				class="fixed right-0 top-14 h-0 w-full bg-amber-950 bg-opacity-30 backdrop-blur text-zinc-50 z-50 overflow-hidden lg:top-20 transition-[height] duration-300">
 				<ul
 					class="flex flex-col gap-4 p-2 h-full justify-center items-center text-xl">
 					<li class="w-fit border-b-2 border-current uppercase">
-						<a href="#inicio"> Inicio </a>
+						<a href="#inicio">Inicio</a>
 					</li>
 					<li class="w-fit border-b-2 border-current uppercase">
 						<a href="#acercade">Acerca de Nosotros</a>
@@ -59,27 +85,24 @@
 					</li>
 				</ul>
 			</nav>
-
 			<div
-				class="relative h-[90vh] text-zinc-50 justify-center overflow-hidden">
+				class="relative h-[90vh] text-zinc-50 justify-center overflow-hidden z-10">
 				<div class="absolute inset-0 h-full w-full z-0">
 					<img
 						src="/images/hero.webp"
 						class="absolute z-0 inset-0 h-full w-auto mx-auto object-cover object-center xs:w-full xs:h-auto animate animate-slow fadeIn"
 						alt="Imagen de ubicacion de los terrenos"
-						data-hero-image />
+						data-hero-image="" />
 					<video
-						class="absolute z-0 inset-0 h-full w-auto object-cover object-[70%_0px] opacity-0 animate animate-slow animate-quick"
+						class="absolute z-0 inset-0 h-full w-auto object-cover object-[70%_0px] opacity-0 animate animate-slow animate-quick 2xl:w-full 2xl:h-auto"
 						src="/video/hero.mp4"
 						muted=""
 						autoplay=""
 						loop=""
-						data-hero-video></video>
+						data-hero-video=""></video>
 				</div>
-
 				<div
 					class="absolute z-0 inset-0 h-full w-full bg-stone-950 bg-opacity-70 backdrop-blur-[1px]"></div>
-
 				<div
 					class="relative h-full flex flex-col justify-center gap-6 mx-auto z-20 px-6 text-center md:px-16">
 					<h1
@@ -87,19 +110,23 @@
 						Campiña del Aguila
 					</h1>
 					<p
-						class="py-6 max-w-prose animate animate-delay-0.5 slideInUp md:text-2xl">
+						class="py-6 max-w-prose mx-auto animate animate-delay-0.5 slideInUp md:text-2xl">
 						Disfruta con tu familia, un paraiso junto a la presa
 					</p>
-					<a
-						href="#contacto"
-						class="block col-span-full row-start-2 bg-amber-50 text-amber-950 text-lg font-semibold py-4 px-12 mt-24 rounded-sm w-fit h-fit mx-auto uppercase animate animate-slow animate-delay-0.5 slideInUp"
-						>Agendar Cita</a
-					>
+					<div
+						class="py-4 px-12 bg-amber-50 relative rounded-sm mx-auto mt-24 uppercase border-2 animate animate-slow animate-delay-0.5 slideInUp">
+						<div
+							class="absolute inset-0 bg-amber-50 rounded-sm animate animate-infinite animate-delay-2 animate-slow pulse -z-10"></div>
+						<a
+							href="#contacto"
+							class="w-full text-amber-950 text-lg font-semibold rounded-sm mx-auto uppercase"
+							>Agendar Cita</a
+						>
+					</div>
 				</div>
 			</div>
-
 			<div
-				class="relative bg-amber-50 py-36 px-4 text-center text-stone-700"
+				class="relative bg-amber-50 py-36 px-4 text-center text-stone-700 z-10"
 				id="acercade">
 				<h2 class="text-3xl font-serif font-medium">
 					Un espacio para toda tu familia, ¡a sólo 20 minutos de la
@@ -115,291 +142,611 @@
 					<span class="font-medium">TUYO</span>.
 				</p>
 			</div>
-
-			<div class="relative px-4 py-24 md:py-12 bg-fixed" id="detalles">
-				<div class="absolute inset-0 -z-10">
+			<div
+				class="relative flex flex-col bg-amber-50 bg-fixed z-0"
+				id="detalles">
+				<div class="absolute inset-0 -z-20">
 					<img
 						src="/images/details.jpg"
 						alt="Fondo Detalles"
-						class="fixed inset-0 h-full object-cover z-0" />
+						class="fixed inset-0 h-full object-cover z-0 xl:w-full xl:h-auto" />
 					<div
-						class="absolute inset-0 bg-stone-950 bg-opacity-30"></div>
+						class="absolute inset-0 bg-stone-950 bg-opacity-40"></div>
 				</div>
-				<ul
-					class="relative flex flex-col gap-8 md:flex-row detail-list text-stone-200"
-					id="detail-list">
-					<li
-						class="space-y-2 text-center md:w-1/3 opacity-0 animate-slow animate">
-						<p class="w-12 h-12 mx-auto">
-							<svg class="w-full h-full fill-current">
-								<use href="/svg/buildings.svg#buildings"></use>
-							</svg>
-						</p>
-						<p class="">
-							Construye tu patrimonio en un lugar cómodo
-						</p>
-					</li>
-					<li
-						class="space-y-2 text-center md:w-1/3 opacity-0 animate-slow animate">
-						<p class="w-12 h-12 mx-auto">
-							<svg class="w-full h-full fill-current">
-								<use href="/svg/diamond.svg#diamonds"></use>
-							</svg>
-						</p>
-						<p class="">Precios únicos y con financiamentos</p>
-					</li>
-					<li
-						class="space-y-2 text-center md:w-1/3 opacity-0 animate-slow animate">
-						<p class="w-12 h-12 mx-auto">
-							<svg class="w-full h-full fill-current">
-								<use href="/svg/diamond.svg#diamonds"></use>
-							</svg>
-						</p>
-						<p class="">Lotes desde 400m<sup>2</sup> (20m x 20m)</p>
-					</li>
-				</ul>
-			</div>
-
-			<div class="relative scroll-p-10 md:flex" id="contacto">
-				<div class="px-4 py-6 bg-amber-50 md:w-1/2">
-					<h2 class="text-xl font-medium text-center">Contactanos</h2>
+				<div
+					class="grow flex-auto pt-12 pb-8 bg-stone-50 text-center text-stone-700 mb-6">
+					<h3 class="text-xl font-medium">Amenidades</h3>
 					<div class="py-2"></div>
-					<p
-						class="text-sm font-semibold text-center max-w-prose mx-auto">
-						Te conectaremos con uno de nuestros asesores para que
-						recibas atención personalizada a través de Whatsapp
+					<p class="mx-auto text-center max-w-prose px-6">
+						Ven a DISFRUTAR de amenidades que te harán sentir en el
+						PARAÍSO
 					</p>
-
-					<div class="py-2"></div>
-					<form
-						id="contact-form"
-						class="p-2 rounded space-y-3 max-w-lg mx-auto">
-						<div class="flex flex-col gap-1 px-2">
-							<label for="name" class="text-sm font-medium"
-								>Nombre</label
-							>
-							<input
-								type="text"
-								name="name"
-								id="name"
-								class="bg-transparent border-b-2 border-zinc-200 p-2 focus:outline-none focus:bg-zinc-50 focus:rounded focus:text-zinc-950 transition placeholder:text-stone-600"
-								placeholder="Juan Perez" />
-						</div>
-
-						<div class="flex flex-col gap-1 px-2">
-							<label for="phone" class="text-sm font-medium"
-								>Teléfono</label
-							>
-							<input
-								type="tel"
-								name="phone"
-								id="phone"
-								class="bg-transparent border-b-2 border-zinc-200 p-2 focus:outline-none focus:bg-zinc-50 focus:rounded focus:text-zinc-950 transition placeholder:text-stone-600"
-								placeholder="618 111 22 33" />
-						</div>
-
-						<div class="flex flex-col gap-1 px-2">
-							<label for="message" class="text-sm font-medium"
-								>Mensaje (opcional)</label
-							>
-							<textarea
-								name="message"
-								id="message"
-								class="bg-transparent border-b-2 border-zinc-200 p-2 focus:outline-none focus:bg-zinc-50 focus:rounded focus:text-zinc-950 transition resize-y"
-								rows="2"></textarea>
-						</div>
-
-						<div class="p-1"></div>
-
+				</div>
+				<!-- Slider mobile -->
+				<div
+					class="slider-container pb-6 z-10"
+					data-slider-container="desktop">
+					<div class="relative pt-6 pb-12">
 						<button
-							type="submit"
-							class="w-full bg-stone-700 text-zinc-50 py-2 rounded uppercase active:scale-95 transition">
-							Enviar
+							type="button"
+							class="absolute slider-arrow slider-prev top-1/2 left-0 -translate-y-1/2 fill-stone-100 z-20"
+							data-slider-prev="">
+							<svg class="w-12 h-12">
+								<use href="/svg/arrow.svg#arrow"></use>
+							</svg>
 						</button>
-					</form>
-				</div>
-				<div class="relative px-4 py-6 md:w-1/2 text-amber-50">
-					<div
-						class="absolute inset-0 bg-stone-950 bg-opacity-30 -z-10"></div>
-					<h2 class="text-xl font-medium text-center">Comunicate</h2>
-					<div class="py-2"></div>
-					<p
-						class="text-sm font-semibold text-center max-w-prose mx-auto">
-						Llama a cualquiera de los números de atención y te
-						brindaremos la información que necesites
-					</p>
-					<div class="py-2"></div>
-					<ul class="space-y-4 text-center" id="contact-list">
-						<li class="text-lg animate opacity-0">
-							<p class="font-semibold">Nombre</p>
-							<p class="">618-111-22-33</p>
-						</li>
-						<li class="text-lg animate animate-delay-1 opacity-0">
-							<p class="font-semibold">Nombre</p>
-							<p class="">618-111-22-33</p>
-						</li>
-						<li class="text-lg animate animate-delay-2 opacity-0">
-							<p class="font-semibold">Nombre</p>
-							<p class="">618-111-22-33</p>
-						</li>
-					</ul>
-					<div class="py-2"></div>
-					<p class="text-sm font-semibold text-center">
-						También puedes enviarnos mensaje en las siguientes redes
-						sociales
-					</p>
-					<div class="py-2"></div>
-					<ul class="flex items-center justify-center gap-3">
-						<li>
-							<a
-								target="_blank"
-								href="https://www.facebook.com/sibramx"
-								class="space-y-0.5">
-								<svg class="w-8 h-8 fill-current">
-									<use href="/svg/fb.svg#fb"></use>
-								</svg>
-								<p class="text-xs font-semibold text-center">
-									Sibra
-								</p>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-
-			<div
-				class="relative max-w-full overflow-hidden space-y-3 py-6 z-10 bg-amber-50 text-stone-700">
-				<h2 class="text-xl font-medium text-center">Localizanos</h2>
-				<p
-					class="text-sm font-semibold text-center px-4 max-w-prose mx-auto">
-					Los terrenos se encuentran en
-					<i>^ubicacion de los terrenos^.</i>
-					Puedes agendar una cita con uno de nuestros asesores para
-					que te acompañen y te muestren el lugar
-				</p>
-				<div class="py-10"></div>
-				<div class="relative max-w-full bg-white">
-					<div
-						class="relative grid grid-cols-1 grid-rows-[auto_1fr] border-4 border-white justify-self-center">
-						<div
-							class="absolute left-0 -top-10 flex gap-0 px-4 z-10">
-							<div
-								class="absolute rounded-t px-4 py-2 h-full text-transparent font-medium bg-white shadow shadow-zinc-300 z-0"
-								data-locate-bg>
-								Maps
-							</div>
-							<button
-								class="relative px-4 py-2 font-medium z-10 basis-1/2"
-								data-locate-selector="maps">
-								Maps
-							</button>
-							<button
-								class="relative px-4 py-2 z-10 basis-1/2"
-								data-locate-selector="render">
-								Plano
-							</button>
-						</div>
-						<iframe
-							class="relative row-start-2 col-start-1 w-full z-20"
-							data-locate-display="maps"
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58229.908322904885!2d-104.67272130095024!3d24.19384339759657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869a354e5d18784d%3A0x288fbb0c35d42c49!2sPresa%20Pe%C3%B1a%20Del%20%C3%81guila!5e0!3m2!1ses-419!2smx!4v1700070417557!5m2!1ses-419!2smx"
-							width="400"
-							height="600"
-							style="border: 0"
-							allowfullscreen=""
-							loading="lazy"
-							referrerpolicy="no-referrer-when-downgrade"></iframe>
-						<div
-							class="relative row-start-2 col-start-1 max-w-full max-h-full invisible z-20 bg-white"
-							data-locate-display="render"
-							id="plan-render-container">
-							<div
-								class="absolute inset-0 w-full h-full bg-stone-50 gap-4 flex flex-col items-center justify-center pointer-events-none animate"
-								data-render-loading-screen>
-								<p
-									class="relative text-xl font-medium uppercase">
-									cargando
-								</p>
+						<button
+							type="button"
+							class="absolute slider-arrow slider-prev top-1/2 right-0 -translate-y-1/2 fill-stone-100 rotate-180 z-20"
+							data-slider-next="">
+							<svg class="w-12 h-12">
+								<use href="/svg/arrow.svg#arrow"></use>
+							</svg>
+						</button>
+						<ul
+							class="slider relative min-w-full flex detail-list text-stone-800 font-medium"
+							id="detail-list"
+							data-slider-slider=""
+							data-slider-animation-duration="400"
+							data-slider-animation-sleep="1500">
+							<li class="slide" data-slider-slide="0">
 								<div
-									class="relative w-4/5 h-4 rounded bg-stone-300 overflow-hidden">
+									class="space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									<p class="mx-auto">
+										<svg
+											class="w-24 h-24 m-auto fill-current">
+											<use
+												href="/svg/buildings.svg#buildings"></use>
+										</svg>
+									</p>
+									<p class="max-w-[15ch] text-lg">
+										Caballerizas
+									</p>
+								</div>
+							</li>
+							<li class="slide" data-slider-slide="1">
+								<div
+									class="space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									<p class="mx-auto">
+										<svg
+											class="w-24 h-24 m-auto fill-current">
+											<use
+												href="/svg/diamond.svg#diamonds"></use>
+										</svg>
+									</p>
+									<p class="max-w-[15ch] text-lg">
+										Cancha de usos multiples
+									</p>
+								</div>
+							</li>
+							<li class="slide" data-slider-slide="2">
+								<div
+									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									<p class="mx-auto">
+										<svg
+											class="w-24 h-24 m-auto fill-current">
+											<use
+												href="/svg/diamond.svg#diamonds"></use>
+										</svg>
+									</p>
+									<p class="max-w-[15ch] text-lg">
+										Casa Club (Gimnasio, Sauna, Bar y más)
+									</p>
+								</div>
+							</li>
+							<li class="slide" data-slider-slide="3">
+								<div
+									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									<p class="mx-auto">
+										<svg
+											class="w-24 h-24 m-auto fill-current">
+											<use
+												href="/svg/diamond.svg#diamonds"></use>
+										</svg>
+									</p>
+									<p class="max-w-[15ch] text-lg">
+										Estacionamiento
+									</p>
+								</div>
+							</li>
+							<li class="slide" data-slider-slide="3">
+								<div
+									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									<p class="mx-auto">
+										<svg
+											class="w-24 h-24 m-auto fill-current">
+											<use
+												href="/svg/diamond.svg#diamonds"></use>
+										</svg>
+									</p>
+									<p class="max-w-[15ch] text-lg">
+										Zona de asadores
+									</p>
+								</div>
+							</li>
+							<li class="slide" data-slider-slide="3">
+								<div
+									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									<p class="mx-auto">
+										<svg
+											class="w-24 h-24 m-auto fill-current">
+											<use
+												href="/svg/diamond.svg#diamonds"></use>
+										</svg>
+									</p>
+									<p class="max-w-[15ch] text-lg">
+										Papalapa usos multiples
+									</p>
+								</div>
+							</li>
+							<li class="slide" data-slider-slide="3">
+								<div
+									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									<p class="mx-auto">
+										<svg
+											class="w-24 h-24 m-auto fill-current">
+											<use
+												href="/svg/diamond.svg#diamonds"></use>
+										</svg>
+									</p>
+									<p class="max-w-[15ch] text-lg">
+										Chapoteadero / Jacuzzi
+									</p>
+								</div>
+							</li>
+							<li class="slide" data-slider-slide="3">
+								<div
+									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									<p class="mx-auto">
+										<svg
+											class="w-24 h-24 m-auto fill-current">
+											<use
+												href="/svg/diamond.svg#diamonds"></use>
+										</svg>
+									</p>
+									<p class="max-w-[15ch] text-lg">Muelle</p>
+								</div>
+							</li>
+							<li class="slide" data-slider-slide="3">
+								<div
+									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									<p class="mx-auto">
+										<svg
+											class="w-24 h-24 m-auto fill-current">
+											<use
+												href="/svg/diamond.svg#diamonds"></use>
+										</svg>
+									</p>
+									<p class="max-w-[15ch] text-lg">Pet Park</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="relative bg-stone-100" id="galeria">
+					<div class="px-4 pb-6 pt-12 bg-amber-50">
+						<h2 class="text-xl font-medium text-center">Galería</h2>
+						<div class="py-2"></div>
+						<div class="text-center max-w-prose mx-auto">
+							Asombrate con el maravilloso paisaje que encontraras
+							en Campiña del Aguila
+						</div>
+					</div>
+					<div class="gallery bg-stone-100">
+						<div
+							data-gallery-display=""
+							class="gallery-display relative w-full flex justify-center items-center p-2 pb-0 flex-auto shrink-0 grow z-10 xl:basis-1/2"></div>
+						<div
+							data-gallery-thumbs=""
+							class="gallery-thumbs bg-stone-50 z-10">
+							<img
+								loading="lazy"
+								class="gallery-thumb w rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_1.JPG"
+								alt="Imagen del desarrollo 1" />
+							<img
+								loading="lazy"
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_2.JPG"
+								alt="Imagen del desarrollo 2" />
+							<img
+								loading="lazy"
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_3.JPG"
+								alt="Imagen del desarrollo 3" />
+							<img
+								loading="lazy"
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_4.JPG"
+								alt="Imagen del desarrollo 4" />
+							<img
+								loading="lazy"
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_5.JPG"
+								alt="Imagen del desarrollo 5" />
+							<img
+								loading="lazy"
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_6.JPG"
+								alt="Imagen del desarrollo 6" />
+							<img
+								loading="lazy"
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_7.JPG"
+								alt="Imagen del desarrollo 7" />
+							<img
+								loading="lazy"
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_8.JPG"
+								alt="Imagen del desarrollo 8" />
+							<img
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_9.JPG"
+								alt="Imagen del desarrollo 9" />
+							<img
+								loading="lazy"
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_10.JPG"
+								alt="Imagen del desarrollo 10" />
+							<img
+								loading="lazy"
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_11.JPG"
+								alt="Imagen del desarrollo 11" />
+							<img
+								loading="lazy"
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_12.JPG"
+								alt="Imagen del desarrollo 12" />
+							<img
+								loading="lazy"
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_13.JPG"
+								alt="Imagen del desarrollo 13" />
+							<img
+								loading="lazy"
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_14.JPG"
+								alt="Imagen del desarrollo 14" />
+							<img
+								loading="lazy"
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_15.JPG"
+								alt="Imagen del desarrollo 15" />
+							<img
+								loading="lazy"
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_16.JPG"
+								alt="Imagen del desarrollo 16" />
+							<img
+								loading="lazy"
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_17.JPG"
+								alt="Imagen del desarrollo 17" />
+							<img
+								loading="lazy"
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_18.JPG"
+								alt="Imagen del desarrollo 18" />
+							<img
+								loading="lazy"
+								class="gallery-thumb rounded brightness-75"
+								width="120"
+								height="68"
+								src="/images/campina_galeria_19.JPG"
+								alt="Imagen del desarrollo 19" />
+						</div>
+					</div>
+				</div>
+				<div class="relative scroll-p-10 md:flex" id="contacto">
+					<div
+						class="absolute inset-0 bg-stone-950 bg-opacity-50 -z-10"></div>
+					<div
+						class="relative px-4 py-6 bg-amber-50 md:w-1/2 xl:bg-transparent xl:text-amber-50"
+						id="contact-form">
+						<h2 class="text-xl font-medium text-center">
+							Contactanos
+						</h2>
+						<div class="py-2"></div>
+						<p
+							class="text-sm font-semibold text-center max-w-prose mx-auto">
+							Te conectaremos con uno de nuestros asesores para
+							que recibas atención personalizada a través de
+							Whatsapp
+						</p>
+						<div class="py-2"></div>
+						<form
+							id="contact-form"
+							class="p-2 rounded space-y-3 max-w-lg mx-auto"
+							name="contact-form">
+							<div class="flex flex-col gap-1 px-2">
+								<label for="name" class="text-sm font-medium"
+									>Nombre</label
+								>
+								<input
+									type="text"
+									name="name"
+									id="name"
+									class="bg-transparent border-b-2 border-zinc-200 p-2 focus:outline-none focus:bg-zinc-50 focus:rounded focus:text-zinc-950 transition placeholder:text-stone-600 xl:placeholder:text-stone-200"
+									placeholder="Juan Perez" />
+							</div>
+							<div class="flex flex-col gap-1 px-2">
+								<label for="phone" class="text-sm font-medium"
+									>Teléfono</label
+								>
+								<input
+									type="tel"
+									name="phone"
+									id="phone"
+									class="bg-transparent border-b-2 border-zinc-200 p-2 focus:outline-none focus:bg-zinc-50 focus:rounded focus:text-zinc-950 transition placeholder:text-stone-600 xl:placeholder:text-stone-200"
+									placeholder="618 111 22 33" />
+							</div>
+							<div class="flex flex-col gap-1 px-2">
+								<label for="message" class="text-sm font-medium"
+									>Mensaje (opcional)</label
+								>
+								<textarea
+									name="message"
+									id="message"
+									class="bg-transparent border-b-2 border-zinc-200 p-2 focus:outline-none focus:bg-zinc-50 focus:rounded focus:text-zinc-950 transition resize-y"
+									rows="2"></textarea>
+							</div>
+							<div class="p-1"></div>
+							<button
+								type="submit"
+								class="w-full bg-stone-700 text-zinc-50 py-2 rounded uppercase active:scale-95 transition">
+								Enviar
+							</button>
+						</form>
+					</div>
+					<div class="relative px-4 py-6 md:w-1/2 text-amber-50">
+						<div
+							class="absolute inset-0 bg-stone-950 bg-opacity-40 -z-10 xl:hidden"></div>
+						<h2 class="text-xl font-medium text-center">
+							Comunicate
+						</h2>
+						<div class="py-2"></div>
+						<p
+							class="text-sm font-semibold text-center max-w-prose mx-auto">
+							Llama a cualquiera de los números de atención y te
+							brindaremos la información que necesites
+						</p>
+						<div class="py-2"></div>
+						<ul class="space-y-4 text-center" id="contact-list">
+							<li class="text-lg animate opacity-0">
+								<p class="font-semibold">Nombre</p>
+								<p class="">618-111-22-33</p>
+							</li>
+							<li
+								class="text-lg animate animate-delay-1 opacity-0">
+								<p class="font-semibold">Nombre</p>
+								<p class="">618-111-22-33</p>
+							</li>
+							<li
+								class="text-lg animate animate-delay-2 opacity-0">
+								<p class="font-semibold">Nombre</p>
+								<p class="">618-111-22-33</p>
+							</li>
+						</ul>
+						<div class="py-2"></div>
+						<p class="text-sm font-semibold text-center">
+							También puedes enviarnos mensaje en las siguientes
+							redes sociales
+						</p>
+						<div class="py-2"></div>
+						<ul class="flex items-center justify-center gap-3">
+							<li>
+								<a
+									target="_blank"
+									href="https://www.facebook.com/sibramx"
+									class="space-y-0.5"
+									><svg class="w-8 h-8 fill-current">
+										<use href="/svg/fb.svg#fb"></use>
+									</svg>
+									<p
+										class="text-xs font-semibold text-center">
+										Sibra
+									</p></a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div
+					class="relative max-w-full overflow-hidden space-y-3 py-6 z-10 bg-amber-50 text-stone-700"
+					id="localiza">
+					<h2 class="text-xl font-medium text-center">Localizanos</h2>
+					<p class="text-sm text-center px-4 max-w-prose mx-auto">
+						Los terrenos se encuentran
+						<i>junto a la presa Peña del Aguila.</i>
+						<strong>AGENDA</strong> una cita con uno de nuestros
+						asesores antes de que se acaben los lotes
+					</p>
+					<div class="py-10"></div>
+					<div class="relative max-w-full bg-white">
+						<div
+							class="relative grid grid-cols-1 grid-rows-[auto_1fr] border-4 border-white justify-self-center">
+							<div
+								class="absolute left-0 -top-10 flex gap-0 px-4 z-10">
+								<div
+									class="absolute rounded-t px-4 py-2 h-full text-transparent font-medium bg-white shadow shadow-zinc-300 z-0"
+									data-locate-bg="">
+									Maps
+								</div>
+								<button
+									class="relative px-4 py-2 font-medium z-10 basis-1/2"
+									data-locate-selector="maps">
+									Maps
+								</button>
+								<button
+									class="relative px-4 py-2 z-10 basis-1/2"
+									data-locate-selector="render">
+									Plano
+								</button>
+							</div>
+							<iframe
+								class="relative row-start-2 col-start-1 w-full z-20"
+								data-locate-display="maps"
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58229.908322904885!2d-104.67272130095024!3d24.19384339759657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869a354e5d18784d%3A0x288fbb0c35d42c49!2sPresa%20Pe%C3%B1a%20Del%20%C3%81guila!5e0!3m2!1ses-419!2smx!4v1700070417557!5m2!1ses-419!2smx"
+								width="400"
+								height="600"
+								style="border: 0"
+								allowfullscreen
+								loading="lazy"
+								referrerpolicy="no-referrer-when-downgrade"></iframe>
+							<div
+								class="relative row-start-2 col-start-1 max-w-full max-h-full invisible z-20 bg-white"
+								data-locate-display="render"
+								id="plan-render-container">
+								<div
+									class="absolute inset-0 w-full h-full bg-stone-50 gap-4 flex flex-col items-center justify-center pointer-events-none animate"
+									data-render-loading-screen="">
+									<p
+										class="relative text-xl font-medium uppercase">
+										cargando
+									</p>
 									<div
-										class="absolute h-full inset-0 w-0 bg-blue-400"
-										data-render-loading-bar></div>
+										class="relative w-4/5 h-4 rounded bg-stone-300 overflow-hidden">
+										<div
+											class="absolute h-full inset-0 w-0 bg-blue-400"
+											data-render-loading-bar=""></div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<div class="relative max-w-full overflow-hidden"></div>
+			<footer
+				class="relative bg-stone-800 p-6 w-full xl:grid xl:grid-cols-4 xl:grid-rows-2 z-10">
+				<div class="relative flex max-w-full xl:self-center">
+					<img
+						src="/images/logo.webp"
+						class="w-32 h-32 m-auto xl:w-52 xl:h-52"
+						alt="Logo de SibraDgo"
+						width="60"
+						height="60" />
+				</div>
+				<div class="py-4">
+					<h3 class="text-lg text-zinc-50">Navegación</h3>
+					<div class="py-1"></div>
+					<ul class="flex flex-col gap-1">
+						<li
+							class="w-fit text-base text-stone-200 border-b-2 border-current pb-0.5">
+							<a href="#inicio">Inicio</a>
+						</li>
+						<li
+							class="w-fit text-base text-stone-200 border-b-2 border-current pb-0.5">
+							<a href="#acercade">Acerca de Nosotros</a>
+						</li>
+						<li
+							class="w-fit text-base text-stone-200 border-b-2 border-current pb-0.5">
+							<a href="#contacto">Contactanos</a>
+						</li>
+						<li
+							class="w-fit text-base text-stone-200 border-b-2 border-current pb-0.5">
+							<a href="#equipo">Nuestro Equipo</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-start-4 py-4">
+					<h3 class="text-lg text-zinc-50">Comunicate</h3>
+					<div class="py-1"></div>
+					<ul class="flex flex-col gap-1">
+						<li
+							class="w-fit text-base text-stone-200 border-current pb-0.5">
+							<span class="font-light"
+								>Al numero telefonico:</span
+							>
+							<span class="font-semibold">618-111-22-33</span>
+						</li>
+						<li
+							class="w-fit text-base text-stone-200 border-current pb-0.5">
+							<span class="font-light">En el facebook:</span>
+							<a
+								href="https://facebook.com/sibramx"
+								class="font-semibold"
+								target="_blank"
+								>Sibra</a
+							>
+						</li>
+						<li
+							class="w-fit text-base text-stone-200 border-current pb-0.5">
+							<span class="font-light"
+								>En nuestras oficinas:</span
+							>
+							<span class="font-semibold"
+								>General Anaya 101, Juan de la Barrera, 34150
+								Durango, Dgo. Arriba de Corleone Domingo
+								Arrieta, frente a Al Super</span
+							>
+						</li>
+					</ul>
+					<div class="py-2"></div>
+					<p class="text-stone-200">
+						Siguenos en nuestras redes sociales:
+					</p>
+					<div class="py-1"></div>
+					<ul
+						class="flex items-center justify-center gap-3 text-stone-200">
+						<li>
+							<a
+								target="_blank"
+								href="https://www.facebook.com/sibramx"
+								class="space-y-0.5"
+								><svg class="w-8 h-8 fill-current">
+									<use href="/svg/fb.svg#fb"></use>
+								</svg>
+								<p class="text-xs font-semibold text-center">
+									Sibra
+								</p></a
+							>
+						</li>
+					</ul>
+				</div>
+				<div
+					class="xl:col-span-full xl:row-start-2 self-end justify-self-center text-stone-700">
+					Copyright © 2023 GG Marketing.
+				</div>
+			</footer>
+			<script type="module" src="main.js"></script>
 		</div>
-		<div class="relative max-w-full overflow-hidden"></div>
-		<footer
-			class="relative bg-stone-800 p-6 w-full xl:grid xl:grid-cols-4 xl:grid-rows-2 z-10">
-			<div class="relative max-w-full xl:self-center">
-				<img
-					src="/images/logo.webp"
-					alt="Logo de SibraDgo"
-					class="mx-auto"
-					width="120"
-					height="60" />
-			</div>
-			<div class="py-4">
-				<h3 class="text-lg text-zinc-50">Navegación</h3>
-				<div class="py-1"></div>
-				<ul class="flex flex-col gap-1">
-					<li
-						class="w-fit text-base text-stone-200 border-b-2 border-current pb-0.5">
-						<a href="#inicio">Inicio</a>
-					</li>
-					<li
-						class="w-fit text-base text-stone-200 border-b-2 border-current pb-0.5">
-						<a href="#acercade">Acerca de Nosotros</a>
-					</li>
-					<li
-						class="w-fit text-base text-stone-200 border-b-2 border-current pb-0.5">
-						<a href="#contacto">Contactanos</a>
-					</li>
-					<li
-						class="w-fit text-base text-stone-200 border-b-2 border-current pb-0.5">
-						<a href="#equipo">Nuestro Equipo</a>
-					</li>
-				</ul>
-			</div>
-			<div class="col-start-4 py-4">
-				<h3 class="text-lg text-zinc-50">Comunicate</h3>
-				<div class="py-1"></div>
-				<ul class="flex flex-col gap-1">
-					<li
-						class="w-fit text-base text-stone-200 border-current pb-0.5">
-						<span class="font-light">Al numero telefonico:</span>
-						<span class="font-semibold">618-111-22-33</span>
-					</li>
-					<li
-						class="w-fit text-base text-stone-200 border-current pb-0.5">
-						<span class="font-light">En el facebook:</span>
-						<a
-							href="https://facebook.com/sibramx"
-							class="font-semibold"
-							target="_blank"
-							>Sibra</a
-						>
-					</li>
-					<li
-						class="w-fit text-base text-stone-200 border-current pb-0.5">
-						<span class="font-light">En nuestras oficinas:</span>
-						<span class="font-semibold"
-							>General Anaya 101, Juan de la Barrera, 34150
-							Durango, Dgo. Arriba de Corleone Domingo Arrieta,
-							frente a Al Super</span
-						>
-					</li>
-				</ul>
-			</div>
-			<div
-				class="xl:col-span-full xl:row-start-2 self-end justify-self-center text-stone-700">
-				Copyright &copy; 2023 GG Marketing.
-			</div>
-		</footer>
-		<script type="module" src="main.js"></script>
 	</body>
 </html>

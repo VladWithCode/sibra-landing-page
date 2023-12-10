@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  include-media:
-    specifier: ^2.0.0
-    version: 2.0.0
   three:
     specifier: ^0.158.0
     version: 0.158.0
@@ -19,6 +16,9 @@ devDependencies:
   postcss:
     specifier: ^8.4.31
     version: 8.4.31
+  postcss-nested:
+    specifier: ^6.0.1
+    version: 6.0.1(postcss@8.4.31)
   tailwindcss:
     specifier: ^3.3.5
     version: 3.3.5
@@ -605,10 +605,6 @@ packages:
     dependencies:
       function-bind: 1.1.2
     dev: true
-
-  /include-media@2.0.0:
-    resolution: {integrity: sha512-LSJcffPYIZ/Kln0rIi5UhqQbZxElDCMYA4dPC5MI1rkwwjptgEiOicHnzB0MMhMNJver0+4zULb4MKlgDyapZg==}
-    dev: false
 
   /inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}

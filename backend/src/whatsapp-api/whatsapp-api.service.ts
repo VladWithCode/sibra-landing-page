@@ -94,9 +94,43 @@ export class WhatsappApiService {
       bodyVariables: [vName, vDate, vPhone, vMessage],
     };
 
-    const [sendError, response] = await asyncHandler(
+    const [sendNotificationError, response] = await asyncHandler(
       this.postCloudAPIMessage({
         toPhoneNumber: '526183188452',
+        type: 'template',
+        templateData,
+      }),
+    );
+    const [sendDataError, sendDataResponse] = await asyncHandler(
+      this.sendWhatsAppProjectInfo({ phone, name }),
+    );
+
+    if (sendDataError) {
+      console.error('[SEND DATA ERROR]: ', sendDataError);
+    }
+
+    if (sendNotificationError) {
+      console.error(sendNotificationError);
+      throw new Error('Error al enviar la solicitud de contacto');
+    }
+
+    return response.data;
+  }
+
+  async sendWhatsAppProjectInfo({ name, phone }) {
+    const vName = {
+      type: 'text',
+      text: name,
+    };
+
+    const templateData = {
+      name: 'project_info',
+      bodyVariables: [vName],
+    };
+
+    const [sendError, response] = await asyncHandler(
+      this.postCloudAPIMessage({
+        toPhoneNumber: '52' + phone,
         type: 'template',
         templateData,
       }),

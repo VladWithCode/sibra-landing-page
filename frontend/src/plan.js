@@ -14,7 +14,7 @@ export default function loadPlan() {
 
 	const loader = new GLTFLoader();
 	const scene = new Three.Scene();
-	scene.background = new Three.Color(0xffeaa7);
+	scene.background = new Three.Color(0xeeeeee);
 
 	const camera = new Three.PerspectiveCamera(
 		75,

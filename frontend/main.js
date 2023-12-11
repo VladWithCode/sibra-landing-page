@@ -11,6 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		navbar.classList.toggle('visible');
 	});
 
+	// Add click listener for links
+	document
+		.querySelectorAll('[data-mobile-navbar-link]')
+		.forEach(link =>
+			link.addEventListener('click', () =>
+				navbar.classList.toggle('visible', false)
+			)
+		);
+
 	// Hero
 	setTimeout(animateBackgrounds(), 3000);
 
@@ -32,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	observer.observe(detailList);
 
 	// Contact Form
-	const contactForm = document.querySelector('#contact-form');
+	const contactForm = document.querySelector('[data-contact-form]');
 
 	contactForm.addEventListener('submit', async e => {
 		e.preventDefault();

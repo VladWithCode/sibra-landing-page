@@ -16,7 +16,10 @@
 			rel="stylesheet" />
 	</head>
 	<body>
-		<div class="w-full mx-auto relative shadow shadow-zinc-300" id="inicio">
+		<div
+			class="w-full mx-auto relative shadow shadow-zinc-300 scroll-smooth"
+			id="inicio"
+			data-root>
 			<header
 				class="fixed top-0 left-0 h-14 w-full flex px-4 py-2 items-center z-50 bg-amber-950 bg-opacity-30 backdrop-blur text-zinc-50 border-b-2 border-zinc-800 border-opacity-20 lg:bg-opacity-40 xl:h-16">
 				<div
@@ -65,22 +68,30 @@
 					</ul>
 				</nav>
 			</header>
-			<!-- Navbar -->
+			<!-- Navbar mobile -->
 			<nav
 				id="main-navbar"
 				class="fixed right-0 top-14 h-0 w-full bg-amber-950 bg-opacity-30 backdrop-blur text-zinc-50 z-50 overflow-hidden lg:top-20 transition-[height] duration-300">
 				<ul
 					class="flex flex-col gap-4 p-2 h-full justify-center items-center text-xl">
-					<li class="w-fit border-b-2 border-current uppercase">
+					<li
+						class="w-fit border-b-2 border-current uppercase"
+						data-mobile-navbar-link>
 						<a href="#inicio">Inicio</a>
 					</li>
-					<li class="w-fit border-b-2 border-current uppercase">
+					<li
+						class="w-fit border-b-2 border-current uppercase"
+						data-mobile-navbar-link>
 						<a href="#acercade">Acerca de Nosotros</a>
 					</li>
-					<li class="w-fit border-b-2 border-current uppercase">
+					<li
+						class="w-fit border-b-2 border-current uppercase"
+						data-mobile-navbar-link>
 						<a href="#detalles">Detalles</a>
 					</li>
-					<li class="w-fit border-b-2 border-current uppercase">
+					<li
+						class="w-fit border-b-2 border-current uppercase"
+						data-mobile-navbar-link>
 						<a href="#contacto">Contacto</a>
 					</li>
 				</ul>
@@ -154,7 +165,7 @@
 						class="absolute inset-0 bg-stone-950 bg-opacity-40"></div>
 				</div>
 				<div
-					class="grow flex-auto pt-12 pb-8 bg-stone-50 text-center text-stone-700 mb-6">
+					class="grow flex-auto pt-12 pb-8 bg-amber-50 text-center text-stone-700 mb-6">
 					<h3 class="text-xl font-medium">Amenidades</h3>
 					<div class="py-2"></div>
 					<p class="mx-auto text-center max-w-prose px-6">
@@ -191,7 +202,7 @@
 							data-slider-animation-sleep="1500">
 							<li class="slide" data-slider-slide="0">
 								<div
-									class="space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									class="space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 rounded-full shadow shadow-stone-800">
 									<p class="mx-auto">
 										<svg
 											class="w-24 h-24 m-auto fill-current">
@@ -206,7 +217,7 @@
 							</li>
 							<li class="slide" data-slider-slide="1">
 								<div
-									class="space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									class="space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 rounded-full shadow shadow-stone-800">
 									<p class="mx-auto">
 										<svg
 											class="w-24 h-24 m-auto fill-current">
@@ -221,7 +232,7 @@
 							</li>
 							<li class="slide" data-slider-slide="2">
 								<div
-									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 rounded-full shadow shadow-stone-800">
 									<p class="mx-auto">
 										<svg
 											class="w-24 h-24 m-auto fill-current">
@@ -236,7 +247,7 @@
 							</li>
 							<li class="slide" data-slider-slide="3">
 								<div
-									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 rounded-full shadow shadow-stone-800">
 									<p class="mx-auto">
 										<svg
 											class="w-24 h-24 m-auto fill-current">
@@ -251,7 +262,7 @@
 							</li>
 							<li class="slide" data-slider-slide="3">
 								<div
-									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 rounded-full shadow shadow-stone-800">
 									<p class="mx-auto">
 										<svg
 											class="w-24 h-24 m-auto fill-current">
@@ -266,7 +277,7 @@
 							</li>
 							<li class="slide" data-slider-slide="3">
 								<div
-									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 rounded-full shadow shadow-stone-800">
 									<p class="mx-auto">
 										<svg
 											class="w-24 h-24 m-auto fill-current">
@@ -281,7 +292,7 @@
 							</li>
 							<li class="slide" data-slider-slide="3">
 								<div
-									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 rounded-full shadow shadow-stone-800">
 									<p class="mx-auto">
 										<svg
 											class="w-24 h-24 m-auto fill-current">
@@ -296,7 +307,7 @@
 							</li>
 							<li class="slide" data-slider-slide="3">
 								<div
-									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 rounded-full shadow shadow-stone-800">
 									<p class="mx-auto">
 										<svg
 											class="w-24 h-24 m-auto fill-current">
@@ -309,7 +320,7 @@
 							</li>
 							<li class="slide" data-slider-slide="3">
 								<div
-									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 bg-opacity-40 backdrop-blur-sm rounded-full shadow shadow-stone-800">
+									class="w-full space-y-2 aspect-square flex flex-col gap-4 items-center justify-center text-center bg-amber-50 rounded-full shadow shadow-stone-800">
 									<p class="mx-auto">
 										<svg
 											class="w-24 h-24 m-auto fill-current">
@@ -323,7 +334,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="relative bg-stone-100" id="galeria">
+				<div class="relative bg-amber-50" id="galeria">
 					<div class="px-4 pb-6 pt-12 bg-amber-50">
 						<h2 class="text-xl font-medium text-center">Galería</h2>
 						<div class="py-2"></div>
@@ -332,13 +343,13 @@
 							en Campiña del Aguila
 						</div>
 					</div>
-					<div class="gallery bg-stone-100">
+					<div class="gallery bg-amber-50">
 						<div
 							data-gallery-display=""
 							class="gallery-display relative w-full flex justify-center items-center p-2 pb-0 flex-auto shrink-0 grow z-10 xl:basis-1/2"></div>
 						<div
 							data-gallery-thumbs=""
-							class="gallery-thumbs bg-stone-50 z-10">
+							class="gallery-thumbs bg-amber-50 z-10">
 							<img
 								loading="lazy"
 								class="gallery-thumb w rounded brightness-75"
@@ -492,7 +503,7 @@
 						</p>
 						<div class="py-2"></div>
 						<form
-							id="contact-form"
+							data-contact-form
 							class="p-2 rounded space-y-3 max-w-lg mx-auto"
 							name="contact-form">
 							<div class="flex flex-col gap-1 px-2">
@@ -655,7 +666,7 @@
 			</div>
 			<div class="relative max-w-full overflow-hidden"></div>
 			<footer
-				class="relative bg-stone-800 p-6 w-full xl:grid xl:grid-cols-4 xl:grid-rows-2 z-10">
+				class="relative bg-stone-800 p-6 w-full xl:grid xl:grid-cols-4 z-10">
 				<div class="relative flex max-w-full xl:self-center">
 					<img
 						src="/images/logo.webp"

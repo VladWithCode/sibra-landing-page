@@ -151,7 +151,7 @@ nav.visible {
 			grid-auto-columns: 16rem;
 		}
 
-		@apply border-stone-50;
+		@apply border-amber-50;
 	}
 
 	&-thumb {

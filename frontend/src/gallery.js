@@ -31,6 +31,14 @@ export class Gallery {
 			thumb.addEventListener('click', () => this.goto(i))
 		);
 
+		this.currentImg.addEventListener('animationend', () => {
+			if (this.currentImgIndex <= -1)
+				this.currentImgIndex = this.thumbCount - 1;
+			else if (this.currentImgIndex >= this.thumbCount)
+				this.currentImgIndex = 0;
+			this.animate(0);
+		});
+
 		this.animate();
 	}
 
@@ -68,19 +76,6 @@ export class Gallery {
 			thumb.classList.toggle('active', indexMod === i)
 		);
 
-		this.currentImg.addEventListener(
-			'animationend',
-			() => {
-				if (this.currentImgIndex <= -1)
-					this.currentImgIndex = this.thumbCount - 1;
-				else if (this.currentImgIndex >= this.thumbCount)
-					this.currentImgIndex = 0;
-				this.animate;
-			},
-			{
-				once: true,
-			}
-		);
 		this.scrollThumbIntoView();
 	}
 

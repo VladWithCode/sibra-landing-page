@@ -819,6 +819,18 @@ video {
   resize: vertical;
 }
 
+.snap-x {
+  scroll-snap-type: x var(--tw-scroll-snap-strictness);
+}
+
+.snap-mandatory {
+  --tw-scroll-snap-strictness: mandatory;
+}
+
+.snap-center {
+  scroll-snap-align: center;
+}
+
 .scroll-p-10 {
   scroll-padding: 2.5rem;
 }
@@ -909,6 +921,10 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
 }
 
 .scroll-smooth {
@@ -1344,6 +1360,7 @@ nav.visible {
     flex: 1 0 100%;
     width: 100%;
     padding: 0 2em;
+    /* position: relative; */
     @media (min-width: 640px) {
       flex-basis: 33.33333%;
 

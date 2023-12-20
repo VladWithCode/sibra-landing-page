@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	setTimeout(animateBackgrounds(), 3000);
 
 	// Detail List
-	const detailList = document.querySelector('#detail-list');
 	const observer = new IntersectionObserver(
 		([entry]) => {
 			if (entry.isIntersecting) {
@@ -37,8 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 		{ threshold: 0.25 }
 	);
-
-	observer.observe(detailList);
 
 	// Contact Form
 	const contactForm = document.querySelector('[data-contact-form]');

@@ -55,7 +55,9 @@ export class InfiniteSlider {
 		this.containerElem.addEventListener('pointerenter', () => {
 			this.stop();
 		});
-		this.containerElem.addEventListener('pointerleave', () => this.play());
+		this.containerElem.addEventListener('pointerleave', () => {
+			this.play();
+		});
 
 		sliderNavigation.append(...this.bulletElems);
 		this.containerElem.append(sliderNavigation);

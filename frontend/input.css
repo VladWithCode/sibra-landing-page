@@ -32,6 +32,18 @@ nav.visible {
 		flex: 1 0 100%;
 		width: 100%;
 		padding: 0 2em;
+		position: relative;
+
+		img {
+			clip-path: circle(0% at 50% 50%);
+			transition: clip-path 0.5s ease-in;
+		}
+
+		&:hover {
+			img {
+				clip-path: circle(100% at 50% 50%);
+			}
+		}
 
 		@screen sm {
 			flex-basis: 33.33333%;
@@ -51,10 +63,6 @@ nav.visible {
 			}
 		}
 	}
-
-	/* 	.slide.is-active {
-		opacity: 1;
-	} */
 
 	.slider-arrow {
 		position: absolute;

@@ -6,7 +6,7 @@ export class HttpConfigService implements HttpModuleOptionsFactory {
     return {
       headers: {
         Authorization: 'Bearer ' + process.env.WHATSAPP_CLOUD_API_ACCESS_TOKEN,
-        'Content-Type': 'application/json',
+        // 'Content-Type': 'application/json',
       },
       baseURL: process.env.WHATSAPP_CLOUD_API_BASE_URL,
     };

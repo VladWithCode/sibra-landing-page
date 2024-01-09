@@ -96,7 +96,7 @@ export class WhatsappApiService {
 
     const [sendNotificationError, response] = await asyncHandler(
       this.postCloudAPIMessage({
-        toPhoneNumber: '526183188452',
+        toPhoneNumber: '52' + process.env.WHATSAPP_NOTIFICATIONS_PHONE,
         type: 'template',
         templateData,
       }),
@@ -106,15 +106,18 @@ export class WhatsappApiService {
     );
 
     if (sendDataError) {
-      console.error('[SEND DATA ERROR]: ', sendDataError);
+      console.error('[SEND_DATA_ERROR]: ', sendDataError);
     }
 
     if (sendNotificationError) {
-      console.error(sendNotificationError);
+      console.error('[SEND_NOTIFICATION_ERROR]: ', sendNotificationError);
       throw new Error('Error al enviar la solicitud de contacto');
     }
 
-    return response.data;
+    return {
+        notificationResponse: response.data,
+        sendDataResponse
+    };
   }
 
   async sendWhatsAppProjectInfo({ name, phone }) {

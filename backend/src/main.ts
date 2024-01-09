@@ -6,6 +6,7 @@ const corsWhitelist = [
   'http://localhost:3030',
   'http://192.168.1.2:3000',
   'https://terrenos.sibradgo.com.mx',
+  'https://xn--campiadelaguila-2qb.com',
 ];
 
 async function bootstrap() {

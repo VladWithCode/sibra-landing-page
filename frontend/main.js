@@ -39,9 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Contact Form
 	const contactForm = document.querySelector('[data-contact-form]');
+    const contactFormLoadingSpinner = document.querySelector('[data-contact-form-loading]');
+
+    console.dir(contactForm, contactFormLoadingSpinner);
 
 	contactForm.addEventListener('submit', async e => {
 		e.preventDefault();
+        contactFormLoadingSpinner.style = 'display: flex;'
 		const requestData = {
 			name: '',
 			phone: '',
@@ -61,6 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		);
 
 		if (sendError) alert(sendError.message);
+
+        contactFormLoadingSpinner.style = 'display: none;'
 
 		alert(response.message);
 		for (let input of inputs) {
@@ -125,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function postContactRequest(requestData) {
-	const response = await fetch('/api/send-contact-request', {
+	const response = await fetch('http://localhost:3000/api/send-contact-request', {
 		headers: {
 			'content-type': 'application/json',
 		},

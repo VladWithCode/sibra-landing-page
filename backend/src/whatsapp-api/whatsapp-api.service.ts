@@ -2,10 +2,36 @@ import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { asyncHandler, dateToLongDate } from 'src/utils/helpers';
 import { firstValueFrom } from 'rxjs';
+import { open } from 'fs/promises';
 
 @Injectable()
 export class WhatsappApiService {
+  static LogFilePath = process.env.LOG_FILE || process.cwd() + '/logs/campina.txt';
+
   constructor(private readonly httpService: HttpService) {}
+
+  private async logRequest({
+    customerPhone,
+    customerName,
+    date,
+  }: {
+    customerPhone: string;
+    customerName: string;
+    date: Date;
+  }) {
+    const file = await open(WhatsappApiService.LogFilePath, 'a');
+
+    const logMessage = `[Solicitud de contacto] ${date.toLocaleDateString(
+      'es-MX',
+    )}
+    Cliente: ${customerName}
+    Telefono: ${customerPhone}
+    --------------------------`;
+
+    file.appendFile(logMessage + '\n', { encoding: 'utf8' });
+
+    await file.close();
+  }
 
   private async postCloudAPIMessage({
     toPhoneNumber,
@@ -63,6 +89,24 @@ export class WhatsappApiService {
     return response.data;
   }
 
+  async fakeRequest({ name, phone }: { name: string; phone: string }) {
+    const [logError] = await asyncHandler(
+      this.logRequest({
+        customerPhone: phone,
+        customerName: name,
+        date: new Date(),
+      }),
+    );
+
+    if (logError) {
+      console.error('[LOG_ERR]: ', logError);
+    }
+
+    return {
+      status: 'OK',
+    };
+  }
+
   async sendWhatsAppContactRequest({
     name,
     phone,
@@ -104,9 +148,20 @@ export class WhatsappApiService {
     const [sendDataError, sendDataResponse] = await asyncHandler(
       this.sendWhatsAppProjectInfo({ phone, name }),
     );
+    const [logError] = await asyncHandler(
+      this.logRequest({
+        customerPhone: phone,
+        customerName: name,
+        date: new Date(),
+      }),
+    );
 
     if (sendDataError) {
       console.error('[SEND_DATA_ERROR]: ', sendDataError);
+    }
+
+    if (logError) {
+      console.error('[LOG_ERR]: ', logError);
     }
 
     if (sendNotificationError) {
@@ -115,8 +170,8 @@ export class WhatsappApiService {
     }
 
     return {
-        notificationResponse: response.data,
-        sendDataResponse
+      notificationResponse: response.data,
+      sendDataResponse,
     };
   }
 
@@ -141,7 +196,7 @@ export class WhatsappApiService {
 
     if (sendError) {
       console.error(sendError);
-      throw new Error('Error al enviar la solicitud de contacto');
+      throw new Error('Error al enviar la información del proyecto');
     }
 
     return response.data;
